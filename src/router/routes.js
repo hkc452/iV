@@ -9,10 +9,8 @@ const loadKViewChiildren = loadChildRoute('kview');
 
 let children = [
   {
-
+    path:'grid',component:loadIViewChildren('grid/index')
   }
-
-
 ];
 
 let  kChildren = [];
@@ -24,11 +22,12 @@ export default  [
     meta:{
       title:''
     },
-    component:loadRoute('index')
+    component:loadRoute('index'),
   },
   {
     path:'/iview',
-    component:loadRoute('iview/index')
+    component:loadRoute('iview/index'),
+    children
   },
   {
     path:'/kview',
