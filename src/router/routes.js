@@ -1,37 +1,49 @@
 /**
  * Created by 77954 on 2017/5/20.
  */
-import {loadRoute,loadChildRoute} from './tool';
-
+import {loadRoute, loadChildRoute} from './tool';
+import notfind from 'notfind';
 const loadIViewChildren = loadChildRoute();
-const loadKViewChiildren = loadChildRoute('kview');
-
+const loadTViewChildren = loadChildRoute('tview');
 
 let children = [
-  {
-    path:'grid',component:loadIViewChildren('grid/index')
-  }
+    {
+        path: 'grid', component: loadIViewChildren('grid/index')
+    }
 ];
 
-let  kChildren = [];
+let tChildren = [
+    {
+        path: 'grid', component: loadTViewChildren('grid/index')
+    }
+];
 
 
 export default  [
-  {
-    path: '/',
-    meta:{
-      title:''
+    {
+        path: '/',
+        meta: {
+            title: ''
+        },
+        component: loadRoute('index'),
     },
-    component:loadRoute('index'),
-  },
-  {
-    path:'/iview',
-    component:loadRoute('iview/index'),
-    children
-  },
-  {
-    path:'/kview',
-    component:loadRoute('kview/index')
-  },
+    {
+        path: '/iview',
+        component: loadRoute('iview/index'),
+        children
+    },
+    {
+        path: '/kview',
+        component: loadRoute('kview/index')
+    },
+    {
+        path: '/tview',
+        component: loadRoute('tview/index'),
+        children: tChildren
+    },
+    {
+        path:'*',
+        component:notfind
+    }
 ];
 

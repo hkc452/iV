@@ -1,6 +1,11 @@
 <template>
-  <router-view></router-view>
+    <h1>
+      fuck row
+    </h1>
 </template>
+<script>
+
+</script>
 <style lang="less" rel="stylesheet/less">
-  @import "../../styles/index";
+
 </style>
