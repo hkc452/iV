@@ -1,9 +1,6 @@
 <template>
-  <h1>kiview</h1>
+  <router-view></router-view>
 </template>
-<script>
-
-</script>
 <style lang="less" rel="stylesheet/less">
-
+  @import "../../styles/index";
 </style>
