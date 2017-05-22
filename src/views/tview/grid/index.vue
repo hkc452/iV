@@ -1,16 +1,18 @@
 <template>
-    <div>
-        <h1>tview grid</h1>
-        <row></row>
-    </div>
+    <Row>
+        <Col :span="10">col-span-10</Col>
+    </Row>
 </template>
 <script type="text/babel">
-    import {Row} from 'components/grid';
+    import {Row,Col} from 'components/grid';
     export default {
         mounted(){
 
         },
-        components:{Row}
+        components:{Row,Col},
+        methods:{
+
+        }
     };
 
 </script>

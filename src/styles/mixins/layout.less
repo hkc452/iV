@@ -1,0 +1,16 @@
+@row-prefix-cls :~'@{css-prefix}row';
+@col-prefix-cls :~'@{css-prefix}col';
+
+
+//进行循环
+.loop-span(){
+  .col(@index) when ( @index > 0 ){
+    .@{col-prefix-cls}-span-@{index}{
+      width: percentage( @index/ @grid-columns);
+    }
+    .col(@index - 1);
+  }
+  .col(@grid-columns);
+}
+
+

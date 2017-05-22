@@ -33,10 +33,6 @@ export default  [
         children
     },
     {
-        path: '/kview',
-        component: loadRoute('kview/index')
-    },
-    {
         path: '/tview',
         component: loadRoute('tview/index'),
         children: tChildren

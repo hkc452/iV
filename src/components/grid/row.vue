@@ -1,11 +1,25 @@
 <template>
-    <h1>
-      fuck row
-    </h1>
+    <div :class="classes()">
+        <slot></slot>
+    </div>
 </template>
-<script>
+<script type="text/babel">
 
+    const prefixCls = 'ivu-row';
+
+    export default {
+        data(){
+            return {
+
+            };
+        },
+        methods:{
+            classes(){
+                return [
+                    `${prefixCls}`,
+
+                ];
+            }
+        }
+    };
 </script>
-<style lang="less" rel="stylesheet/less">
-
-</style>
