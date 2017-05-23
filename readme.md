@@ -5,3 +5,6 @@
     1.首先会使用iview
     2.然后自己找轮子
     3.测试
+    
+    
+>组件书写顺序，name,props,data,methods,生命周期

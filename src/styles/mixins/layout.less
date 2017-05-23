@@ -25,6 +25,8 @@
   .clearfix;
   position: relative;
   height: auto;
+  margin-left:  (@gutter / -2);
+  margin-right:  (@gutter / -2);
 }
 
 //循环生成float的样式, 把所有的span list串联起来
@@ -54,6 +56,11 @@
   .@{col-prefix-cls}-span@{class}-@{index} {
     display: block;
     width: percentage((@index/ @grid-columns));
+  }
+
+
+  .@{col-prefix-cls}@{class}-order-@{index} {
+    order:@index;
   }
 
   //开启循环
