@@ -1,8 +1,9 @@
 <template>
-    <Row type="flex" :gutter="16">
-        <Col :span="10" order="4">col-span-10</Col>
-        <Col :span="7" order="2">col-span-7</Col>
-        <Col :span="7" order="27">col-span-7</Col>
+    <Row type="flex" justify="center" align="top" class="code-row-bg">
+        <Col span="4"><p style="height: 80px">col-4</p></Col>
+        <Col span="4"><p style="height: 30px">col-4</p></Col>
+        <Col span="4"><p style="height: 100px">col-4</p></Col>
+        <Col span="4"><p style="height: 60px">col-4</p></Col>
     </Row>
 </template>
 <script type="text/babel">
@@ -19,5 +20,11 @@
 
 </script>
 <style lang="less" rel="stylesheet/less">
-
+    .code-row-bg{
+        height: 200px;
+        > div{
+            background-color: #6dc0ff;
+            color: white;
+        }
+    }
 </style>

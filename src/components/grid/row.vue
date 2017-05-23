@@ -21,13 +21,26 @@
                     return oneOf(value, ['flex']);
                 }
             },
+            justify: {
+                validator (value) {
+                    return oneOf(value, ['start', 'end', 'center', 'space-around', 'space-between']);
+                }
+            },
+            align: {
+                validator (value) {
+                    return oneOf(value, ['top', 'middle', 'bottom']);
+                }
+            },
+            className: String
         },
         computed: {
             classes(){
                 return [
                     {
                         [`${prefixCls}`]:!this.type,
-                        [`${prefixCls}-${this.type}`]:!!this.type
+                        [`${prefixCls}-${this.type}`]:!!this.type,
+                        [`${prefixCls}-${this.type}-${this.justify}`]:this.justify,
+                        [`${prefixCls}-${this.type}-${this.align}`]:this.align
                     }
                 ];
             },

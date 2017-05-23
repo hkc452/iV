@@ -58,10 +58,23 @@
     width: percentage((@index/ @grid-columns));
   }
 
+  .@{col-prefix-cls}@{class}-offset-@{index} {
+    margin-left: percentage((@index/ @grid-columns));
+  }
+
+
+  .@{col-prefix-cls}@{class}-push-@{index} {
+    left: percentage((@index/ @grid-columns));
+  }
+  .@{col-prefix-cls}@{class}-pull-@{index} {
+    right: percentage((@index/ @grid-columns));
+  }
 
   .@{col-prefix-cls}@{class}-order-@{index} {
     order:@index;
   }
+
+
 
   //开启循环
   .loop-grid-columns((@index - 1), @class)
@@ -72,7 +85,12 @@
   .@{col-prefix-cls}-span@{class}-@{index} {
     display: none;
   }
-
+  .@{col-prefix-cls}@{class}-push-@{index} {
+    left: auto;
+  }
+  .@{col-prefix-cls}@{class}-pull-@{index} {
+    right: auto;
+  }
 }
 
 .make-col(@class:~'') {
