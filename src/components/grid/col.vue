@@ -12,6 +12,9 @@
         props: {
             span: [Number, String],
             order: [Number, String],
+            pull:[Number,String],
+            push:[Number,String],
+            offset:[Number,String]
         },
         data(){
             return {
@@ -25,6 +28,9 @@
                     {
                         [`${prefixCls}-span-${this.span}`]: this.span,
                         [`${prefixCls}-order-${this.order}`]:!!this.order,
+                        [`${prefixCls}-pull-${this.pull}`]:!!this.pull,
+                        [`${prefixCls}-push-${this.push}`]: !!this.push,
+                        [`${prefixCls}-offset-${this.offset}`]: !!this.offset,
                     }
                 ];
             },
