@@ -1,16 +1,75 @@
-@row-prefix-cls :~'@{css-prefix}row';
-@col-prefix-cls :~'@{css-prefix}col';
+@row-prefix-cls: ~'@{css-prefix}row';
+@col-prefix-cls: ~'@{css-prefix}col';
 
+//两种方式进行循环
+//1.
+//.loop-span(){
+//  .col(@index) when ( @index > 0 ){
+//    .@{col-prefix-cls}-span-@{index}{
+//      width: percentage( @index/ @grid-columns);
+//    }
+//    .col(@index - 1);
+//  }
+//  .col(@grid-columns);
+//}
+//2.
+//.col(@index) when ( @index > 0 ){
+//  .@{col-prefix-cls}-span-@{index}{
+//    width: percentage( @index/ @grid-columns);
+//  }
+//  .col(@index - 1);
+//}
+//.col(@grid-columns);
 
-//进行循环
-.loop-span(){
-  .col(@index) when ( @index > 0 ){
-    .@{col-prefix-cls}-span-@{index}{
-      width: percentage( @index/ @grid-columns);
-    }
-    .col(@index - 1);
-  }
-  .col(@grid-columns);
+.make-row(@gutter :@grid-gutter-width) {
+  .clearfix;
+  position: relative;
+  height: auto;
 }
 
+//循环生成float的样式, 把所有的span list串联起来
+.float-grid-columns(@class) {
+
+  .col(@index) {
+    @item: ~".@{col-prefix-cls}-span@{class}-@{index}";
+    .col((@index + 1), @item);
+  }
+
+  .col(@index,@list) when (@index <= @grid-columns) {
+    @item: ~".@{col-prefix-cls}-span@{class}-@{index}";
+    //记得加~提示不被编译
+    .col((@index + 1), ~"@{list},@{item}");
+  }
+  //生成最终的样式
+  .col(@index,@list) when (@index > @grid-columns) {
+    @{list} {
+      float: left;
+      flex: 0 0 auto;
+    }
+  }
+  .col(1); //开始
+}
+
+.loop-grid-columns(@index, @class) when (@index > 0) {
+  .@{col-prefix-cls}-span@{class}-@{index} {
+    display: block;
+    width: percentage((@index/ @grid-columns));
+  }
+
+  //开启循环
+  .loop-grid-columns((@index - 1), @class)
+}
+
+//条件终止
+.loop-grid-columns(@index, @class) when (@index = 0) {
+  .@{col-prefix-cls}-span@{class}-@{index} {
+    display: none;
+  }
+
+}
+
+.make-col(@class:~'') {
+  .float-grid-columns(@class);
+  .loop-grid-columns(@grid-columns, @class);
+}
 
