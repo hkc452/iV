@@ -4,5 +4,6 @@
 <script type="text/babel">
 </script>
 <style lang="less" rel="stylesheet/less">
-    @import "../../styles/index";
+    /*使用iview时屏蔽*/
+    /*@import "../../styles/index";*/
 </style>

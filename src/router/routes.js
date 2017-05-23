@@ -1,23 +1,10 @@
 /**
  * Created by 77954 on 2017/5/20.
  */
-import {loadRoute, loadChildRoute} from './tool';
+import {loadRoute} from './tool';
 import notfind from 'notfind';
-const loadIViewChildren = loadChildRoute();
-const loadTViewChildren = loadChildRoute('tview');
-
-let children = [
-    {
-        path: 'grid', component: loadIViewChildren('grid/index')
-    }
-];
-
-let tChildren = [
-    {
-        path: 'grid', component: loadTViewChildren('grid/index')
-    }
-];
-
+import children from './child/iview';
+import tChildren from './child/tview';
 
 export default  [
     {
