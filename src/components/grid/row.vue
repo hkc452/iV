@@ -40,7 +40,8 @@
                         [`${prefixCls}`]:!this.type,
                         [`${prefixCls}-${this.type}`]:!!this.type,
                         [`${prefixCls}-${this.type}-${this.justify}`]:this.justify,
-                        [`${prefixCls}-${this.type}-${this.align}`]:this.align
+                        [`${prefixCls}-${this.type}-${this.align}`]:this.align,
+                        [`${this.className}`]: !!this.className
                     }
                 ];
             },

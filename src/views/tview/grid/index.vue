@@ -1,9 +1,8 @@
 <template>
     <Row type="flex" justify="center" align="top" class="code-row-bg">
-        <Col span="4"><p style="height: 80px">col-4</p></Col>
-        <Col span="4"><p style="height: 30px">col-4</p></Col>
-        <Col span="4"><p style="height: 100px">col-4</p></Col>
-        <Col span="4"><p style="height: 60px">col-4</p></Col>
+        <Col :xs="{ span: 5, offset: 1 }" :lg="{ span: 6, offset: 2 }">Col</Col>
+        <Col :xs="{ span: 11, offset: 1 }" :lg="{ span: 6, offset: 2 }">Col</Col>
+        <Col :xs="{ span: 5, offset: 1 }" :lg="{ span: 6, offset: 2 }">Col</Col>
     </Row>
 </template>
 <script type="text/babel">
