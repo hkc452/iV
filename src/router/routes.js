@@ -5,6 +5,10 @@ import {loadRoute} from './tool';
 import notfind from 'notfind';
 import children from './child/iview';
 import tChildren from './child/tview';
+// import genRoute from './genRoute';
+// const children  = genRoute('iview');
+// const tChildren  = genRoute('tview');
+
 
 export default  [
     {
